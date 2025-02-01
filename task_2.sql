@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS customers (
     address TEXT NOT NULL
 );
 
+-- Fix: Ensure the Foreign Key Reference Matches Exactly
 -- Create Orders Table
 CREATE TABLE IF NOT EXISTS orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -43,3 +44,4 @@ CREATE TABLE IF NOT EXISTS order_details (
     FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
     FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
 );
+
